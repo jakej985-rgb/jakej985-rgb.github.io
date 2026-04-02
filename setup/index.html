@@ -1,14 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Setup Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jake's Setup Dashboard</title>
+
+<style>
+body {
+  font-family: Arial;
+  background:#0d1117;
+  color:#c9d1d9;
+  margin:0;
+}
+
+header {
+  padding:20px;
+  text-align:center;
+  font-size:26px;
+  font-weight:bold;
+}
+
+.section {
+  margin:20px;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap:15px;
+}
+
+.card {
+  background:#161b22;
+  border:1px solid #30363d;
+  padding:15px;
+  border-radius:12px;
+  transition:0.2s;
+}
+
+.card:hover {
+  transform:scale(1.03);
+  border-color:#58a6ff;
+}
+
+a {
+  color:#58a6ff;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+h2 {
+  border-bottom:1px solid #30363d;
+  padding-bottom:5px;
+}
+</style>
 </head>
+
 <body>
-  <h1>Setup / Projects</h1>
-  <p>This is the setup folder page for your GitHub Pages site.</p>
-  <ul>
-    <li><a href="https://github.com/jakej985-rgb">My GitHub Profile</a></li>
-  </ul>
+
+<header>🚀 Jake's Server & Dev Dashboard</header>
+
+<div class="section">
+<h2>📦 GitHub Projects</h2>
+<div id="repos" class="grid"></div>
+</div>
+
+<div class="section">
+<h2>🖥️ Server Apps</h2>
+<div class="grid">
+  <div class="card"><a href="http://YOUR-IP:8096">Jellyfin</a></div>
+  <div class="card"><a href="http://YOUR-IP:8989">Sonarr</a></div>
+  <div class="card"><a href="http://YOUR-IP:7878">Radarr</a></div>
+  <div class="card"><a href="http://YOUR-IP:6767">Bazarr</a></div>
+  <div class="card"><a href="http://YOUR-IP:8080">qBittorrent</a></div>
+</div>
+</div>
+
+<div class="section">
+<h2>📱 Flutter / Apps</h2>
+<div class="grid">
+  <div class="card">Tattoo Studio App (WIP)</div>
+  <div class="card">Future Mobile Builds</div>
+</div>
+</div>
+
+<div class="section">
+<h2>⚙️ Setup Notes</h2>
+<div class="grid">
+  <div class="card">Docker Media Stack</div>
+  <div class="card">Ubuntu Server Config</div>
+  <div class="card">Drive / RAID Setup</div>
+</div>
+</div>
+
+<script>
+fetch('https://api.github.com/users/jakej985-rgb/repos')
+.then(res => res.json())
+.then(data => {
+  const container = document.getElementById('repos');
+
+  data.forEach(repo => {
+    const div = document.createElement('div');
+    div.className = 'card';
+
+    div.innerHTML = `
+      <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+      <p>${repo.description || 'No description yet'}</p>
+    `;
+
+    container.appendChild(div);
+  });
+});
+</script>
+
 </body>
 </html>
