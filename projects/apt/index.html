@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M3TAL Packages - APT Repository</title>
+  <link rel="stylesheet" href="/assets/css/m3tal.css">
+  <script src="/assets/js/m3tal.js" defer></script>
+</head>
+<body>
+
+  <header id="m3tal-global-header"></header>
+
+  <main class="m3tal-container">
+    <div class="m3tal-card">
+      <h1 style="margin-bottom: 1rem; background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">📦 APT Package System</h1>
+      <p style="color: var(--text-muted); margin-bottom: 2rem;">The official package archive distributing compiled CLI binaries and daemons for Debian/Ubuntu distributions. Signed cryptographically with GPG keys for security.</p>
+      
+      <h2 style="font-size: 1.3rem; margin-bottom: 1rem;">Setup Options</h2>
+      <ul style="margin-left: 1.5rem; margin-bottom: 2rem; color: var(--text-main); display: flex; flex-direction: column; gap: 0.5rem;">
+        <li><strong>Automatic Install</strong>: Run the unified shell script wrapper to trust keys, add repository lines, and install package dependencies automatically.</li>
+        <li><strong>Manual Installation</strong>: Download GPG keys and write `/etc/apt/sources.list.d/m3tal.list` lines manually.</li>
+      </ul>
+
+      <div style="display: flex; gap: 1.5rem;">
+        <a href="/m3tal-apt-key/" class="m3tal-nav-link active" style="padding: 0.75rem 1.5rem; border-radius: 8px;">Launch Setup &rarr;</a>
+        <a href="/m3tal-docs/#/apt/INSTALL" class="m3tal-nav-link" style="padding: 0.75rem 1.5rem; border-radius: 8px; border-color: var(--panel-border);">Setup Docs</a>
+      </div>
+    </div>
+  </main>
+
+  <div id="m3tal-global-footer"></div>
+
+</body>
+</html>

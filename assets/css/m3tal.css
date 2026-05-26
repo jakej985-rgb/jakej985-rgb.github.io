@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+
+:root {
+  --bg-color: #07080c;
+  --bg-gradient: radial-gradient(circle at 50% 0%, #151828 0%, #07080c 60%);
+  --panel-bg: rgba(17, 24, 39, 0.45);
+  --panel-border: rgba(255, 255, 255, 0.08);
+  --panel-border-hover: rgba(0, 242, 254, 0.3);
+  
+  --primary-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --accent-cyan: #00f2fe;
+  --accent-blue: #4facfe;
+  --accent-emerald: #10b981;
+  
+  --text-main: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-inverse: #07080c;
+  
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+  
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 20px rgba(0, 242, 254, 0.15);
+  
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  text-shadow: 0 0 8px rgba(0, 242, 254, 0.4);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-cyan);
+}
+
+/* --- Global Navbar --- */
+.m3tal-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: rgba(7, 8, 12, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--panel-border);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.m3tal-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.m3tal-nav-brand span {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.m3tal-nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.m3tal-nav-link {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: var(--transition-normal);
+  border: 1px solid transparent;
+}
+
+.m3tal-nav-link:hover, .m3tal-nav-link.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.m3tal-nav-link.active {
+  border-color: var(--panel-border-hover);
+  box-shadow: var(--shadow-glow);
+}
+
+/* --- Layout Grid --- */
+.m3tal-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 2rem 4rem;
+}
+
+/* --- Glass Cards --- */
+.m3tal-card {
+  background: var(--panel-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.m3tal-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary-gradient);
+  opacity: 0;
+  transition: var(--transition-normal);
+}
+
+.m3tal-card:hover {
+  border-color: var(--panel-border-hover);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  transform: translateY(-4px);
+}
+
+.m3tal-card:hover::before {
+  opacity: 1;
+}
+
+/* --- Hero Section --- */
+.m3tal-hero {
+  text-align: center;
+  padding: 4rem 0 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.m3tal-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+
+.m3tal-hero p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+/* --- Docs Layout with Sidebar --- */
+.m3tal-docs-container {
+  display: flex;
+  gap: 2rem;
+  padding-top: 70px;
+  min-height: 100vh;
+}
+
+.m3tal-sidebar {
+  width: 280px;
+  position: fixed;
+  top: 70px;
+  bottom: 0;
+  left: 0;
+  background: rgba(7, 8, 12, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-right: 1px solid var(--panel-border);
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.m3tal-sidebar-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-cyan);
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+}
+
+.m3tal-sidebar-title:first-child {
+  margin-top: 0;
+}
+
+.m3tal-sidebar-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.m3tal-sidebar-item a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  color: var(--text-muted);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: var(--transition-fast);
+}
+
+.m3tal-sidebar-item a:hover, .m3tal-sidebar-item.active a {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.m3tal-sidebar-item.active a {
+  border-left: 2px solid var(--accent-cyan);
+  border-radius: 0 6px 6px 0;
+}
+
+.m3tal-docs-content {
+  margin-left: 280px;
+  flex: 1;
+  padding: 3rem;
+  max-width: 900px;
+}
+
+/* --- Markdown styling --- */
+.m3tal-markdown {
+  font-size: 1.05rem;
+}
+
+.m3tal-markdown h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--panel-border);
+  padding-bottom: 0.5rem;
+}
+
+.m3tal-markdown h2 {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--panel-border);
+  padding-bottom: 0.25rem;
+}
+
+.m3tal-markdown h3 {
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.m3tal-markdown p {
+  margin-bottom: 1.25rem;
+  color: var(--text-main);
+}
+
+.m3tal-markdown ul, .m3tal-markdown ol {
+  margin-bottom: 1.25rem;
+  margin-left: 1.5rem;
+}
+
+.m3tal-markdown li {
+  margin-bottom: 0.5rem;
+}
+
+.m3tal-markdown code {
+  font-family: var(--font-mono);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: var(--accent-cyan);
+}
+
+.m3tal-markdown pre {
+  background: rgba(17, 24, 39, 0.7);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.m3tal-markdown pre code {
+  background: transparent;
+  padding: 0;
+  color: var(--text-main);
+  font-size: 0.9rem;
+}
+
+.m3tal-markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.m3tal-markdown th, .m3tal-markdown td {
+  border: 1px solid var(--panel-border);
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.m3tal-markdown th {
+  background: rgba(255, 255, 255, 0.03);
+  color: #ffffff;
+}
+
+.m3tal-markdown blockquote {
+  border-left: 4px solid var(--accent-cyan);
+  padding-left: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+/* --- Code Copy Button container --- */
+.m3tal-code-container {
+  position: relative;
+}
+
+.m3tal-copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--panel-border);
+  color: var(--text-muted);
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.m3tal-copy-btn:hover {
+  background: rgba(0, 242, 254, 0.1);
+  color: #ffffff;
+  border-color: var(--accent-cyan);
+}
+
+/* --- Footer --- */
+.m3tal-footer {
+  margin-top: auto;
+  border-top: 1px solid var(--panel-border);
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}

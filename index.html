@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M3TAL Ecosystem Portal</title>
+  <meta name="description" content="Central hub for M3TAL ecosystem: Core automation engine, plugin catalogs, APT installation, and developer documentation.">
+  <link rel="stylesheet" href="/assets/css/m3tal.css">
+  <script src="/assets/js/m3tal.js" defer></script>
+</head>
+<body>
+
+  <!-- Global Header Navbar Placeholder -->
+  <header id="m3tal-global-header"></header>
+
+  <!-- Hero Section -->
+  <main class="m3tal-container">
+    <section class="m3tal-hero">
+      <h1>The M3TAL Platform</h1>
+      <p>A unified, modular ecosystem built for automated container service orchestration, secure Traefik edge routing, and streamlined package installation.</p>
+    </section>
+
+    <!-- Grid of Projects -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
+      
+      <!-- Core Card -->
+      <article class="m3tal-card">
+        <h2 style="font-size: 1.5rem; margin-bottom: 0.75rem;">⚙️ M3TAL Core</h2>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">The system engine daemon and command-line TUI controller. Automates Docker Compose stack operations, config updates, and filesystem mappings.</p>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <a href="/projects/m3tal-core/">Overview &rarr;</a>
+          <a href="/m3tal-docs/#/m3tal-core/README" style="color: var(--text-muted); font-size: 0.9rem;">Docs</a>
+        </div>
+      </article>
+
+      <!-- Plugins Card -->
+      <article class="m3tal-card">
+        <h2 style="font-size: 1.5rem; margin-bottom: 0.75rem;">🔌 Plugin Catalog</h2>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">An interactive list of ready-to-run app stacks, routing middleware presets, and reverse proxy plugins ready for installation.</p>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <a href="/m3tal-plugin-page/">Browse Plugins &rarr;</a>
+          <a href="/m3tal-docs/#/plugins/README" style="color: var(--text-muted); font-size: 0.9rem;">Docs</a>
+        </div>
+      </article>
+
+      <!-- APT Install Card -->
+      <article class="m3tal-card">
+        <h2 style="font-size: 1.5rem; margin-bottom: 0.75rem;">📦 APT Repository</h2>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Official Debian packages distribution archive. Contains public cryptographic verification keys, quick installation scripts, and GPG keyring details.</p>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <a href="/m3tal-apt-key/">Setup Repo &rarr;</a>
+          <a href="/m3tal-docs/#/apt/INSTALL" style="color: var(--text-muted); font-size: 0.9rem;">Docs</a>
+        </div>
+      </article>
+
+      <!-- Docs Card -->
+      <article class="m3tal-card">
+        <h2 style="font-size: 1.5rem; margin-bottom: 0.75rem;">📚 Documentation Hub</h2>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Central single source of truth for technical guides, API references, configuration properties, development standards, and architectural blueprints.</p>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <a href="/m3tal-docs/">Read Manuals &rarr;</a>
+          <a href="/m3tal-docs/#/ecosystem/ARCHITECTURE" style="color: var(--text-muted); font-size: 0.9rem;">Vision</a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Global Footer Placeholder -->
+  <div id="m3tal-global-footer"></div>
+
+</body>
+</html>

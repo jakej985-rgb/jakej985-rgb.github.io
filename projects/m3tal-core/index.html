@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M3TAL Core - System Engine</title>
+  <link rel="stylesheet" href="/assets/css/m3tal.css">
+  <script src="/assets/js/m3tal.js" defer></script>
+</head>
+<body>
+
+  <header id="m3tal-global-header"></header>
+
+  <main class="m3tal-container">
+    <div class="m3tal-card">
+      <h1 style="margin-bottom: 1rem; background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">⚙️ M3TAL Core</h1>
+      <p style="color: var(--text-muted); margin-bottom: 2rem;">The primary service coordinator daemon and TUI shell command interface. Responsible for system lifecycle management, routing rules execution, configuration stores, and service diagnostics.</p>
+      
+      <h2 style="font-size: 1.3rem; margin-bottom: 1rem;">Primary Functions</h2>
+      <ul style="margin-left: 1.5rem; margin-bottom: 2rem; color: var(--text-main); display: flex; flex-direction: column; gap: 0.5rem;">
+        <li>Wraps and runs multi-container deployment instructions using Docker Compose V2.</li>
+        <li>Monitors container state transitions and writes event histories to the local SQLite state engine.</li>
+        <li>Generates load balancer routing definitions and secures Traefik certificates automatically.</li>
+        <li>Exposes secured JSON REST endpoints on port 8080 for dashboard communication.</li>
+      </ul>
+
+      <div style="display: flex; gap: 1.5rem;">
+        <a href="/m3tal-docs/#/m3tal-core/README" class="m3tal-nav-link active" style="padding: 0.75rem 1.5rem; border-radius: 8px;">Explore Manuals &rarr;</a>
+        <a href="/m3tal-apt-key/" class="m3tal-nav-link" style="padding: 0.75rem 1.5rem; border-radius: 8px; border-color: var(--panel-border);">Install Package</a>
+      </div>
+    </div>
+  </main>
+
+  <div id="m3tal-global-footer"></div>
+
+</body>
+</html>

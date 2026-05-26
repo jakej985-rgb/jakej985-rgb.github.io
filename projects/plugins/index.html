@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M3TAL Plugins - Extend Your System</title>
+  <link rel="stylesheet" href="/assets/css/m3tal.css">
+  <script src="/assets/js/m3tal.js" defer></script>
+</head>
+<body>
+
+  <header id="m3tal-global-header"></header>
+
+  <main class="m3tal-container">
+    <div class="m3tal-card">
+      <h1 style="margin-bottom: 1rem; background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">🔌 M3TAL Plugins</h1>
+      <p style="color: var(--text-muted); margin-bottom: 2rem;">Extend system features using modular add-on definitions. Plugins range from full-stack configurations to Traefik security header presets.</p>
+      
+      <h2 style="font-size: 1.3rem; margin-bottom: 1rem;">Plugin Types</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+        <div style="background: rgba(255,255,255,0.02); padding: 1rem; border-radius: 8px; border: 1px solid var(--panel-border);">
+          <h3 style="font-size: 1.1rem; color: var(--accent-cyan); margin-bottom: 0.5rem;">⚙️ Stacks</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">Launch database nodes, local AI engines, or observability systems with automated proxy configuration.</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 1rem; border-radius: 8px; border: 1px solid var(--panel-border);">
+          <h3 style="font-size: 1.1rem; color: var(--accent-cyan); margin-bottom: 0.5rem;">🛡️ Middleware</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">Activate security templates, load balancing options, basic auth locks, and rate limits.</p>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 1.5rem;">
+        <a href="/m3tal-plugin-page/" class="m3tal-nav-link active" style="padding: 0.75rem 1.5rem; border-radius: 8px;">Plugin Catalog &rarr;</a>
+        <a href="/m3tal-docs/#/plugins/README" class="m3tal-nav-link" style="padding: 0.75rem 1.5rem; border-radius: 8px; border-color: var(--panel-border);">Developer Guide</a>
+      </div>
+    </div>
+  </main>
+
+  <div id="m3tal-global-footer"></div>
+
+</body>
+</html>
